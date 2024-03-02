@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import FindProfessional from './pages/findProfessional';
 import RegistrationPage from './pages/registrationPages/resPage';
-import Findprofessional from './pages/findProfessional';
 import LoginPage from './pages/loginPages/logPage';
 
 function App() {
-
   return (
-    <div className="App">
-
-     <Findprofessional/> 
-    
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<FindProfessional />} />
+          <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

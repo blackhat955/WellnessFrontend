@@ -1,12 +1,12 @@
 // import './App.css';
+import React from 'react';
 import Navbar from '../components/navbar/navbar'; 
 import Search from '../components/searchnav/searchnav';
 import UserContainer from '../components/cardPopulate/populate';
 
 
 
-
-function findprofessional() {
+function FindProfessional() {
   return (
     <div>
     <Navbar />  
@@ -20,4 +20,4 @@ function findprofessional() {
   );
 }
 
-export default findprofessional;
+export default FindProfessional;
