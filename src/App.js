@@ -4,6 +4,7 @@ import './App.css';
 import FindProfessional from './pages/findProfessional';
 import RegistrationPage from './pages/registrationPages/resPage';
 import LoginPage from './pages/loginPages/logPage';
+import WorkoutPlans from './pages/workoutPlansPages/workoutPlans';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<FindProfessional />} />
           <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/workoutplans" element={<WorkoutPlans />} />
         </Routes>
       </div>
     </Router>
