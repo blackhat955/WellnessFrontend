@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* //jkb2 */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* width
+::-webkit-scrollbar {
+  width: 2.5px;
+}
+
+/* Track
+::-webkit-scrollbar-track {
+} */
+
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 7px;
+  height: 55px;
+} */ 
