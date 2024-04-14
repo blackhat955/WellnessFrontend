@@ -1,19 +1,20 @@
 import Navbar from '../components/navbar/navbar'; 
 import Search from '../components/searchnav/searchnav';
-import UserContainer from '../components/cardPopulate/populate';
-
+import session from './session';
+import VideoGallery from '../components/workplasvideosCard/videoComponent';
 
 
 
 function workoutPlans() {
+    session();
   return (
     <div>
-    <Navbar />  
+    {/* <Navbar />   */}
     <Search className="go"/>
     <div style={{margin:"30px", textAlign:"center"}}>
-      <h1>Find a Professional</h1>
+      <h1>Find workout Contents</h1>
     </div>
-    <UserContainer />
+    <VideoGallery />
 
     </div>
   );
