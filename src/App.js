@@ -14,6 +14,7 @@ import { ThemeProvider, styled } from 'styled-components';
 import {light_theme} from './assets/utils/light_theme';
 import { Container } from '@mui/material';
 import Workouts from './pages/calendar/calendar';
+import ProfessionalDashboard from './pages/ProfessionalDashboard';
 
 
 const App = () => {
@@ -53,7 +54,7 @@ const App = () => {
             <Route path="/professional/:name" element={userDetails ? <Workouts /> : <Navigate to="/" replace />} />
             <Route path="/workplans/:name" element={userDetails ? <Findprofessional /> : <Navigate to="/" replace />} />
             <Route path="/admin/:name" element={userDetails ? <Admin /> : <Navigate to="/" replace />} />
-            {/* Add more routes as needed */}
+            Add more routes as needed
           </Routes>
     </Router>
     </ThemeProvider>);
