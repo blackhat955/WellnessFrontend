@@ -5,6 +5,9 @@ import { ThemeProvider } from 'styled-components';
 // import brand from '../../assets/images/brand.png';
 import './chat.css';
 
+
+const user = JSON.parse(localStorage.getItem('userDetails'));
+
 const steps = [
     {
         id: 'welcome',
@@ -48,7 +51,7 @@ const steps = [
         component: (
             <div>
                 Are you looking for workout plans to start off your fitness journey? Try checking out this section:
-                <Link to="/workplans"> Workout Plans</Link>
+                <Link to={`/workplans/${user.firstname}`}> Workout Plans</Link>
             </div>
         ),
         asMessage: true,
@@ -59,7 +62,7 @@ const steps = [
         component: (
             <div>
                 Confused how to begin your fitness journey? Get help from our certified Professionals:
-                <Link to="/professional"> Professionals</Link>
+                <Link to={`/professional/${user.firstname}`}> Professionals</Link>
             </div>
         ),
         asMessage: true,
