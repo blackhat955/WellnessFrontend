@@ -42,12 +42,23 @@ const steps = [
         options: [
           { value: 1, label: 'Workout Plans', trigger: '3' },
           { value: 2, label: 'Workout Professionals', trigger: '4' },
+          { value: 4, label: 'Profile', trigger: '6' },
           { value: 3, label: 'Contact us', trigger: '5' },
-          { value: 4, label: 'About us', trigger: '6' },
+        //   { value: 5, label: '', trigger: '7' },
         ],
     },
     {
         id: '3',
+        component: (
+            <div>
+                Do you want to find a workout professional or do you want to watch free workout videos?
+            </div>
+        ),
+        asMessage: true,
+        trigger: 'workout-options',
+    },
+    {
+        id: '7',
         component: (
             <div>
                 Are you looking for workout plans to start off your fitness journey? Try checking out this section:
@@ -72,8 +83,7 @@ const steps = [
         id: '5',
         component: (
             <div>
-                Could not find what you want? Let us know so we can help you:
-                {/* <Link to="/professional"> Contact us</Link> */}
+                Could not find what you want? Let us know so we can help you by sending the query on welltrack360@gmail.com                
             </div>
         ),
         asMessage: true,
@@ -83,12 +93,21 @@ const steps = [
         id: '6',
         component: (
             <div>
-                Want to know more about us? Head on to this page for more information:
-                {/* <Link to="/professional"> About us</Link> */}
+                Want to know the your past activity? You can simply visit you profile and check the past activity:
+                <Link to={`/profile/${user.firstname}`}> Profile</Link>
             </div>
         ),
         asMessage: true,
         trigger: 'q-submit',
+    },
+    {
+        id: 'workout-options',
+        options: [
+            { value: 1, label: 'Workout Plans', trigger: '7' },
+            { value: 2, label: 'Professionals', trigger: '4' },
+          ],
+        
+
     },
     {
         id: 'q-submit',
@@ -129,7 +148,10 @@ const steps = [
     {
         id: 'end-message',
         component: (
-            <div>Good to see you!</div>
+            <div>
+                If you have any other questions, you can ask me anytime!
+                Good to see you!
+            </div>
         ),
         asMessage: true,
         end: true,
