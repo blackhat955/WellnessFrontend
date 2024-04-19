@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ChatBot from 'react-simple-chatbot';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 // import brand from '../../assets/images/brand.png';
 import './chat.css';
 
 
+
+function Chat() {
+  const navigate = useNavigate();
+
+useEffect(() => {
+  const userDetails = localStorage.getItem('userDetails');
+  if (!userDetails || !JSON.parse(userDetails).firstname) {
+    navigate('/'); // Redirect to login page
+  }
+}, [navigate]);
 const user = JSON.parse(localStorage.getItem('userDetails'));
 
 const steps = [
@@ -180,7 +190,6 @@ const config = {
     headerTitle: 'Wellness Bot',
 };
 
-function Chat() {
     return (
         <ThemeProvider theme={theme}>
             <ChatBot
